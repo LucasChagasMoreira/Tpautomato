@@ -5,15 +5,17 @@
 
 
 int main(){
-    int tamanho;
-    int **reticulado;
-    printf("Digite o tamanho do reticulado");
-    scanf("%d",&tamanho);
-    reticulado = alocarReticulado(tamanho);
-    LeituraReticulado(reticulado,tamanho);
+    int tamanho = 10;
     
-    //imprimeReticulado(reticulado,tamanho);
+    AutomatoCelular **reticulado;
+    FILE *txt = fopen("texto.txt","r");
+    fscanf(txt,"%d",&tamanho);
+    reticulado = Reticuladoarq(txt,tamanho);
+
+    imprimeReticulado(reticulado,tamanho);
+
     evoluirReticulado(reticulado,tamanho);
+
     
     printf("\n");
     imprimeReticulado(reticulado,tamanho);

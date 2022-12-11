@@ -2,13 +2,21 @@
 #define __FUNCTIONS__
 #include <stdio.h>
 #include <stdlib.h>
+typedef struct
+{
+    //variaveis para fazer a troca entre as geraçoes do reticulado
+    int estadoatual;
+    int estadofuturo;
 
+}AutomatoCelular;
 
-int **alocarReticulado(int ordem);
-void desalocaReticulado(int ***M, int ordem);
-void LeituraReticulado(int **M, int ordem);
-void imprimeReticulado(int **M,int size);
-void evoluirReticulado(int **M,int size);
-int verifica(int**M,int size,int row,int col);
+void zeramatriz(AutomatoCelular **M,int size);
+AutomatoCelular **Reticuladoarq(FILE *arq,int size);
+AutomatoCelular **alocarReticulado(int ordem);
+void desalocaReticulado(AutomatoCelular ***M, int ordem);
+void LeituraReticulado(AutomatoCelular **M, int ordem);
+void imprimeReticulado(AutomatoCelular **M,int size);
+void evoluirReticulado(AutomatoCelular **M,int size);
+int verifica(AutomatoCelular**M,int size,int row,int col);
 
-#endif
+#endif  
