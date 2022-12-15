@@ -10,6 +10,7 @@ AutomatoCelular **alocarReticulado(int ordem) {
     }
     return mat;
 }
+//funçao extra
 void zeramatriz(AutomatoCelular **M,int size){
     for(int i = 0;i<size;i++){
 		for(int j = 0;j<size;j++){
@@ -47,6 +48,7 @@ AutomatoCelular **Reticuladoarq(FILE *arq,int size){
         return reticulado;
 	}
 }
+
 //funçao para o usuario preencher uma matriz    
 void LeituraReticulado(AutomatoCelular **M, int ordem) {
 	for(int i = 0;i<ordem;i++){
@@ -55,6 +57,7 @@ void LeituraReticulado(AutomatoCelular **M, int ordem) {
 		}
 	}
 }
+
 //funçao para exibir a matriz
 void imprimeReticulado(AutomatoCelular **M,int size){
     for(int i = 0;i<size;i++){

@@ -5,20 +5,19 @@
 
 
 int main(){
-    int tamanho = 10;
-    
-    AutomatoCelular **reticulado;
-    FILE *txt = fopen("texto.txt","r");
-    fscanf(txt,"%d",&tamanho);
-    reticulado = Reticuladoarq(txt,tamanho);
+    int tamanho;
 
-    imprimeReticulado(reticulado,tamanho);
+    scanf("%d",&tamanho);
+    
+    AutomatoCelular **reticulado = alocarReticulado(tamanho);
+
+    LeituraReticulado(reticulado,tamanho);
 
     evoluirReticulado(reticulado,tamanho);
 
-    
-    printf("\n");
     imprimeReticulado(reticulado,tamanho);
+
     desalocaReticulado(&reticulado,tamanho);
+    
     return 0;
 }
