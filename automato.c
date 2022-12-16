@@ -85,7 +85,7 @@ int verifica(AutomatoCelular**M,int size,int row,int col){
     for(int i = row-1 ; i<=row+1 ; i++){
         for(int j = col-1 ; j<=col+1 ; j++){
             if((i == row && j == col) || (i<0||j<0) || (i>=size || j>=size)){
-                
+                continue;
             }
             else if(M[i][j].estadoatual==1){
                 count++;
