@@ -2,13 +2,8 @@
 #define __FUNCTIONS__
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct
-{
-    //variaveis para fazer a troca entre as geraçoes do reticulado
-    int estadoatual;
-    int estadofuturo;
 
-}AutomatoCelular;
+typedef struct automatocelular AutomatoCelular;
 
 void zeramatriz(AutomatoCelular **M,int size);
 AutomatoCelular **Reticuladoarq(FILE *arq,int size);

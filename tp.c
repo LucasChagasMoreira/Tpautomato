@@ -9,7 +9,9 @@ int main(){
 
     scanf("%d",&tamanho);
     
-    AutomatoCelular **reticulado = alocarReticulado(tamanho);
+    AutomatoCelular **reticulado;
+    
+	reticulado = alocarReticulado(tamanho);
 
     LeituraReticulado(reticulado,tamanho);
 

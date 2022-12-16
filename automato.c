@@ -1,13 +1,24 @@
 #include "automato.h"
 
+struct automatocelular
+{
+    //variaveis para fazer a troca entre as geraÃ§oes do reticulado
+    int estadoatual;
+    int estadofuturo;
+
+};
+
 //funçao para alocar uma matriz
 AutomatoCelular **alocarReticulado(int ordem) {
     AutomatoCelular **mat = malloc(ordem * sizeof(AutomatoCelular*));
-
+	
     for (int i=0;i<ordem;i++)
     {
         mat[i] = malloc(ordem * sizeof(AutomatoCelular*));
     }
+    
+    zeramatriz(mat, ordem);
+    
     return mat;
 }
 //funçao extra
@@ -15,6 +26,7 @@ void zeramatriz(AutomatoCelular **M,int size){
     for(int i = 0;i<size;i++){
 		for(int j = 0;j<size;j++){
 			M[i][j].estadofuturo = 0;
+			M[i][j].estadoatual = 0;
 		}
 	}
 }
@@ -73,9 +85,9 @@ int verifica(AutomatoCelular**M,int size,int row,int col){
     for(int i = row-1 ; i<=row+1 ; i++){
         for(int j = col-1 ; j<=col+1 ; j++){
             if((i == row && j == col) || (i<0||j<0) || (i>=size || j>=size)){
-                continue;
+                
             }
-            if(M[i][j].estadoatual==1){
+            else if(M[i][j].estadoatual==1){
                 count++;
             }
         }
